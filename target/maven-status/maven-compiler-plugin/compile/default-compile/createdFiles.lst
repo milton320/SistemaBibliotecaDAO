@@ -1,0 +1,5 @@
+com\emergentes\dao\AutorDAOimpl.class
+com\emergentes\dao\AutorDAO.class
+com\emergentes\utiles\ConexionDB.class
+com\emergentes\controlador\AutorControlador.class
+com\emergentes\modelo\Autor.class
