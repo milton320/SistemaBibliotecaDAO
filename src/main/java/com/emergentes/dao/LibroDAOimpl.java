@@ -128,10 +128,14 @@ public class LibroDAOimpl extends ConexionDB implements LibroDAO{
         try{
             this.conectar();
             String sql = "SELECT * FROM libros";
+            //String sql = "SELECT l.id, l.titulo, l.cantidad_disponible, l.estado_libro, l.fecha_edicion, l.formato, l.descripcion, l.imagen_pdf, l.observaciones, c.nombre, a.nombre, e.nombre FROM libros l INNER JOIN categorias c ON l.categoria_id = c.id INNER JOIN autores a ON l.autor_id = a.id INNER JOIN editoriales e ON l.editorial_id = e.id";
+            //sql += "INNER JOIN categorias c ON l.categoria_id = c.id ";
+            //sql += "INNER JOIN autores a ON l.autor_id = a.id ";
+            //sql += "INNER JOIN editoriales e ON l.editorial_id = e.id";
             PreparedStatement ps = this.conn.prepareStatement(sql);
 
             ResultSet rs = ps.executeQuery();
-
+            
             while(rs.next()){
                 Libro pro = new Libro();
 

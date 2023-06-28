@@ -37,7 +37,7 @@
                             <td>${item.direccion}</td>
                             <td>${item.telefono}</td>
                             <td><a href="EditorialControlador?action=edit&id=${item.id}" class="btn btn-outline-primary">Editar</a></td>
-                            <td><a  class="btn btn-outline-danger" href="EditorialControlador?action=delete&id=${item.id}">Eliminar  </a></td>
+                            <td><a  class="btn btn-outline-danger" href="EditorialControlador?action=delete&id=${item.id}" onclick="return(confirm('Estas seguro'))">Eliminar  </a></td>
                         </tr>
                     </c:forEach>
 

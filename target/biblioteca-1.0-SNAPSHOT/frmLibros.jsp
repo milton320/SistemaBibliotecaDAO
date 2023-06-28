@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>Formilario Libros</h1>
+            <h1>Formulario Libros</h1>
             <form action="LibroControlador" method="POST">
                 <input type="hidden" name="id" value="${libros.id}">
                 <div class="mb-3">
@@ -48,16 +48,28 @@
                 </div>
                 <div class="mb-3">
                     <label for="categoria_id" class="form-label">categoria_id</label>
-                    <input type="text" class="form-control" id="categoria_id" value="${libros.categoria_id}" name="categoria_id">
+                    <select name="categoria_id" class="form-control">
+                        <c:forEach var="item" items="${lista_categorias}" >
+                            <option value="${item.id}">${item.nombre}</option>
+                        </c:forEach>
+                    </select>
                 </div>
                 <div class="mb-3">
                     <label for="autor_id" class="form-label">autor_id</label>
-                    <input type="text" class="form-control" id="autor_id" value="${libros.autor_id}" name="autor_id">
+                    <select name="autor_id" class="form-control">
+                        <c:forEach var="item" items="${lista_autores}" >
+                            <option value="${item.id}">${item.nombre}</option>
+                        </c:forEach>
+                    </select>
                 </div>
                 
                 <div class="mb-3">
                     <label for="editorial_id" class="form-label">editorial_id</label>
-                    <input type="text" class="form-control" id="editorial_id" value="${libros.editorial_id}" name="editorial_id">
+                    <select name="editorial_id" class="form-control">
+                        <c:forEach var="item" items="${lista_editoriales}" >
+                            <option value="${item.id}">${item.nombre}</option>
+                        </c:forEach>
+                    </select>
                 </div>
                 
                 <button type="submit" class="btn btn-primary">Enviar</button> 

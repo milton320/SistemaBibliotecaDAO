@@ -33,7 +33,7 @@
                             <td>${item.nombre}</td>
                             <td>${item.descripcion}</td>
                             <td><a href="CategoriaControlador?action=edit&id=${item.id}" class="btn btn-outline-primary">Editar</a></td>
-                            <td><a  class="btn btn-outline-danger" href="AutorControlador?action=delete&id=${item.id}">Eliminar  </a></td>
+                            <td><a  class="btn btn-outline-danger" href="AutorControlador?action=delete&id=${item.id}" onclick="return(confirm('Estas seguro'))">Eliminar  </a></td>
                         </tr>
                     </c:forEach>
 

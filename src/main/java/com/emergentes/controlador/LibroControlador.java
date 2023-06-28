@@ -4,8 +4,17 @@
  */
 package com.emergentes.controlador;
 
+import com.emergentes.dao.AutorDAO;
+import com.emergentes.dao.AutorDAOimpl;
+import com.emergentes.dao.CategoriaDAO;
+import com.emergentes.dao.CategoriaDAOimpl;
+import com.emergentes.dao.EditorialDAO;
+import com.emergentes.dao.EditorialDAOimpl;
 import com.emergentes.dao.LibroDAO;
 import com.emergentes.dao.LibroDAOimpl;
+import com.emergentes.modelo.Autor;
+import com.emergentes.modelo.Categoria;
+import com.emergentes.modelo.Editorial;
 import com.emergentes.modelo.Libro;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -31,15 +40,32 @@ public class LibroControlador extends HttpServlet {
             Libro aut = new Libro();
             int id;
             LibroDAO dao = new LibroDAOimpl();
+            CategoriaDAO daoCategoria = new CategoriaDAOimpl();
+            AutorDAO daoAutor = new AutorDAOimpl();
+            EditorialDAO daoEditorial = new EditorialDAOimpl();
 
             String action = (request.getParameter("action") != null) ? request.getParameter("action") : "view";
-
+            List<Categoria> listaCategorias = null;
+            List<Autor> listaAutores = null;
+            List<Editorial> listaEditoriales = null;
             switch (action) {
                 case "add":
+                    listaCategorias = daoCategoria.getll();
+                    listaAutores = daoAutor.getll();
+                    listaEditoriales = daoEditorial.getll();
                     request.setAttribute("libros", aut);
+                    request.setAttribute("lista_categorias", listaCategorias);
+                    request.setAttribute("lista_autores", listaAutores);
+                    request.setAttribute("lista_editoriales", listaEditoriales);
                     request.getRequestDispatcher("frmLibros.jsp").forward(request, response);
                     break;
                 case "edit":
+                    listaCategorias = daoCategoria.getll();
+                    listaAutores = daoAutor.getll();
+                    listaEditoriales = daoEditorial.getll();
+                    request.setAttribute("lista_categorias", listaCategorias);
+                    request.setAttribute("lista_autores", listaAutores);
+                    request.setAttribute("lista_editoriales", listaEditoriales);
                     id = Integer.parseInt(request.getParameter("id"));
                     aut = dao.getById(id);
                     request.setAttribute("libros", aut);

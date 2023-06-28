@@ -43,7 +43,7 @@ public class EditorialControlador extends HttpServlet {
                 case "edit":
                     id = Integer.parseInt(request.getParameter("id"));
                     aut = dao.getById(id);
-                    request.setAttribute("autores", aut);
+                    request.setAttribute("editoriales", aut);
                     request.getRequestDispatcher("frmEditoriales.jsp").forward(request, response);
 
                     break;

@@ -99,7 +99,7 @@ public class CategoriaDAOimpl extends ConexionDB implements CategoriaDAO{
 
     @Override
     public List<Categoria> getll() throws Exception {
-         ArrayList<Categoria> lista = new ArrayList<Categoria>();
+         ArrayList<Categoria> lista = null;
 
         try{
             this.conectar();
@@ -107,7 +107,7 @@ public class CategoriaDAOimpl extends ConexionDB implements CategoriaDAO{
             PreparedStatement ps = this.conn.prepareStatement(sql);
 
             ResultSet rs = ps.executeQuery();
-
+            lista = new ArrayList<Categoria>();
             while(rs.next()){
                 Categoria pro = new Categoria();
 

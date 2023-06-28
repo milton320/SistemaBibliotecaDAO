@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>Formilario Autores</h1>
+            <h1>Formulario Autores</h1>
             <form action="AutorControlador" method="POST">
                 <input type="hidden" name="id" value="${autores.id}">
                 <div class="mb-3">

@@ -40,6 +40,7 @@ public class AutorControlador extends HttpServlet {
                 case "add":
                     request.setAttribute("autores", aut);
                     request.getRequestDispatcher("frmAutores.jsp").forward(request, response);
+                    response.sendRedirect("autores.jsp");
                     break;
                 case "edit":
                     id = Integer.parseInt(request.getParameter("id"));
