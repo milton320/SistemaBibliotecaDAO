@@ -52,7 +52,7 @@ public class AutorControlador extends HttpServlet {
                 case "delete":
                     id = Integer.parseInt(request.getParameter("id"));
                     dao.delete(id);
-                    response.sendRedirect("index");
+                    response.sendRedirect("autores.jsp");
                     break;
                 case "view":
                     List<Autor> lista = dao.getll();

@@ -39,14 +39,14 @@ public class CategoriaControlador extends HttpServlet {
             switch (action) {
                 case "add":
                     request.setAttribute("categorias", aut);
-                    request.getRequestDispatcher("frmCategoria.jsp").forward(request, response);
+                    request.getRequestDispatcher("frmCategorias.jsp").forward(request, response);
                     break;
                 case "edit":
                     id = Integer.parseInt(request.getParameter("id"));
                     aut = dao.getById(id);
 
                     request.setAttribute("categorias", aut);
-                    request.getRequestDispatcher("frmCategoria.jsp").forward(request, response);
+                    request.getRequestDispatcher("frmCategorias.jsp").forward(request, response);
 
                     break;
                 case "delete":

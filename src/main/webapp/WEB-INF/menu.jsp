@@ -13,7 +13,7 @@
         <a class="nav-link <%=  (opcion.equals("editoriales")? "active":"") %>" href="EditorialControlador">Editoriales</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link <%=  (opcion.equals("libros")? "active":"") %>" href="#">Libros</a>
+        <a class="nav-link <%=  (opcion.equals("libros")? "active":"") %>" href="LibroControlador">Libros</a>
     </li>
 
 </ul>  

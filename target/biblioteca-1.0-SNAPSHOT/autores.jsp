@@ -14,7 +14,7 @@
         </jsp:include>
         <div class="container">
             <h1>Autores</h1>
-            <a  class="btn btn-outline-success" href="AutorControlador?action=add">Registrar</a>
+            <a class="btn btn-outline-success" href="AutorControlador?action=add">Registrar</a>
             <table border="1" class="table table-striped">
                 <thead>
                     <tr>
@@ -33,7 +33,7 @@
                             <td>${item.nombre}</td>
                             <td>${item.correo}</td>
                             <td><a href="AutorControlador?action=edit&id=${item.id}" class="btn btn-outline-primary">Editar</a></td>
-                            <td><a  class="btn btn-outline-danger" href="AutorControlador?action=delete&id=${item.id}" onclick="return(confirm('Estas seguro'))">Eliminar  </a></td>
+                            <td><a class="btn btn-outline-danger" href="AutorControlador?action=delete&id=${item.id}" onclick="return(confirm('Estas seguro'))">Eliminar  </a></td>
                         </tr>
                     </c:forEach>
 

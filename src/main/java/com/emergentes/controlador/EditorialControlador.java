@@ -38,13 +38,13 @@ public class EditorialControlador extends HttpServlet {
             switch (action) {
                 case "add":
                     request.setAttribute("editoriales", aut);
-                    request.getRequestDispatcher("frmEditorial.jsp").forward(request, response);
+                    request.getRequestDispatcher("frmEditoriales.jsp").forward(request, response);
                     break;
                 case "edit":
                     id = Integer.parseInt(request.getParameter("id"));
                     aut = dao.getById(id);
                     request.setAttribute("autores", aut);
-                    request.getRequestDispatcher("frmAutores.jsp").forward(request, response);
+                    request.getRequestDispatcher("frmEditoriales.jsp").forward(request, response);
 
                     break;
                 case "delete":
@@ -83,7 +83,7 @@ public class EditorialControlador extends HttpServlet {
         aut.setNombre(nombre);
         aut.setPais(pais);
         aut.setDireccion(direccion);
-        aut.setTelefono(direccion);
+        aut.setTelefono(telefono);
         
         
         
